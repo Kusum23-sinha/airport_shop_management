@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Available Shops</title>
+    <style>
+        /* General Page Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #d197e0, #9ed0d7);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #2d3e50;
+            margin: 40px 0 20px;
+            text-align: center;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        /* Shop List Container */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            max-width: 600px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Individual Shop Card */
+        li {
+            background-color: #f0e8e8;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-align: left;
+            border-left: 6px solid #b40cde;
+        }
+
+        li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        h3 {
+            color: #f5bd08;
+            margin: 10px 0;
+            font-size: 1.6em;
+        }
+
+        p {
+            margin: 5px 0;
+            color: #555;
+            font-size: 1.1em;
+        }
+
+        /* No Shops Available Message */
+        p.no-shops {
+            text-align: center;
+            font-style: italic;
+            color: #999;
+            font-size: 1.3em;
+            margin: 40px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Available Shops for Lease</h1>
+
+    {% if available_shops %}
+        <ul>
+            {% for shop in available_shops %}
+                <li>
+                    <h3>{{ shop.shop_name }}</h3>
+                    <p>Area: {{ shop.area }} sq ft</p>
+                    <p>Rent Amount: ₹{{ shop.rent_amount }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="no-shops">No shops available for lease at the moment.</p>
+    {% endif %}
+</body>
+</html>
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Available Shops</title>
+</head>
+<body>
+    <h1>Available Shops for Lease</h1>
+
+    {% if available_shops %}
+        <ul>
+            {% for shop in available_shops %}
+                <li>
+                    <h3>{{ shop.shop_name }}</h3>
+                    <p>Area: {{ shop.area }} sq ft</p>
+                    <p>Rent Amount: ₹{{ shop.rent_amount }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No shops available for lease at the moment.</p>
+    {% endif %}
+</body>
+</html> -->

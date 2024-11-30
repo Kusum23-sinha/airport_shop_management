@@ -144,9 +144,24 @@ app_license = "mit"
 # 		"on_trash": "method"
 # 	}
 # }
+# In hooks.py
+
+doc_events = {
+    "Shop": {
+        "on_update": "airport_management.api.update_shop_counts"
+    }
+}
+
 
 # Scheduled Tasks
 # ---------------
+# scheduler_events = {
+#     "Cron":{
+#         "/5 * * * *": [
+#             "airport_management.api.send_rent_reminders"
+#         ]
+#     }
+# }
 
 # scheduler_events = {
 # 	"all": [

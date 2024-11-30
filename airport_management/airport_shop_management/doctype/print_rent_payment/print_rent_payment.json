@@ -1,0 +1,105 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format: {tenant}-{shop}-{##}",
+ "creation": "2024-11-14 18:46:15.315956",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "rent_payment_section",
+  "tenant",
+  "shop",
+  "payment_date",
+  "rent_status",
+  "shop_name",
+  "shop_number",
+  "rent_amount",
+  "tenant_name"
+ ],
+ "fields": [
+  {
+   "fetch_from": "tenant.shop",
+   "fieldname": "shop",
+   "fieldtype": "Data",
+   "label": "Shop"
+  },
+  {
+   "fetch_from": "rent_payment.tenant",
+   "fieldname": "tenant",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Tenant",
+   "options": "Rent Payment"
+  },
+  {
+   "fetch_from": "tenant.payment_date",
+   "fieldname": "payment_date",
+   "fieldtype": "Data",
+   "label": "Payment date"
+  },
+  {
+   "fetch_from": "tenant.rent_status",
+   "fieldname": "rent_status",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Rent Status"
+  },
+  {
+   "fieldname": "rent_payment_section",
+   "fieldtype": "Section Break",
+   "label": "Rent Payment"
+  },
+  {
+   "fieldname": "shop_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Shop Name",
+   "options": "Shop"
+  },
+  {
+   "fetch_from": "shop_name.shop_number",
+   "fieldname": "shop_number",
+   "fieldtype": "Data",
+   "label": "Shop Number"
+  },
+  {
+   "fetch_from": "shop_name.rent_amount",
+   "fieldname": "rent_amount",
+   "fieldtype": "Data",
+   "label": "Rent Amount"
+  },
+  {
+   "fieldname": "tenant_name",
+   "fieldtype": "Link",
+   "label": "Tenant Name",
+   "options": "Tenant"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-11-14 19:39:06.969172",
+ "modified_by": "Administrator",
+ "module": "Airport Shop Management",
+ "name": "Print Rent Payment",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "tenant"
+}
